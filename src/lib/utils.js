@@ -168,13 +168,15 @@ export function isBusinessOpen() {
   const now = new Date();
   const day = now.getDay(); // 0 = Sunday, 6 = Saturday
   const hour = now.getHours();
+  const minutes = now.getMinutes();
+  const timeInMinutes = hour * 60 + minutes;
 
-  // Example hours: Mon-Sun 11am - 10pm
-  // Customize based on your business hours
-  const openHour = 11;
-  const closeHour = 22;
-
-  return hour >= openHour && hour < closeHour;
+  // Sunday (0) to Thursday (4): 17:00 - 20:30
+  if (day >= 0 && day <= 4) {
+    return timeInMinutes >= 17 * 60 && timeInMinutes < (20 * 60 + 30);
+  }
+  // Friday (5) to Saturday (6): 17:00 - 21:00
+  return timeInMinutes >= 17 * 60 && timeInMinutes < 21 * 60;
 }
 
 /**
@@ -182,8 +184,7 @@ export function isBusinessOpen() {
  * @returns {string} Business hours
  */
 export function getBusinessHours() {
-  // Customize based on your business hours
-  return "Mon-Sun: 11:00 AM - 10:00 PM";
+  return "Sun-Thu: 5:00 PM - 8:30 PM, Fri-Sat: 5:00 PM - 9:00 PM";
 }
 
 /**

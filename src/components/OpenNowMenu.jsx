@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function OpenNowMenu() {
   return (
-    <section className="relative bg-[#1E3227] overflow-hidden py-32">
+    <section className="relative bg-[#1E3227] overflow-hidden pt-24 pb-16 lg:pb-20">
       {/* Wavy Top Divider */}
 
 
@@ -39,7 +39,7 @@ export default function OpenNowMenu() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="w-full mx-auto px-4 lg:px-10 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-7xl font-black text-[#F5F4E0] uppercase tracking-tighter leading-none mb-4">
@@ -51,9 +51,9 @@ export default function OpenNowMenu() {
         </div>
 
         {/* Menu Image Container */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1800px] mx-auto">
           {/* Two menu pages: side by side on desktop, stacked on mobile */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-start">
             {/* Page 1: main pizza menu */}
             <div className="relative rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.3)] border-4 border-[#F5F4E0]/10 hover:border-[#E25439]/50 transition-colors duration-500">
               <Image

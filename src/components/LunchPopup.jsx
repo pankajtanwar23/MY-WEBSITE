@@ -38,7 +38,7 @@ export default function LunchPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4"
+      className="fixed inset-0 z-[100] flex items-center justify-center lg:justify-end bg-black/60 lg:bg-black/30 p-4 lg:pr-16"
       onClick={close}
     >
       <div

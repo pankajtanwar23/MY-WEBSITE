@@ -51,18 +51,38 @@ export default function OpenNowMenu() {
         </div>
 
         {/* Menu Image Container */}
-        <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.3)] border-4 border-[#F5F4E0]/10 hover:border-[#E25439]/50 transition-colors duration-500">
-            <Image
-              src="/knead-menu.jpg"
-              alt="Knead Pizza Menu"
-              width={1200}
-              height={1800}
-              className="w-full h-auto object-contain scale-[1.01]"
-              priority
-            />
+        <div className="max-w-7xl mx-auto">
+          {/* Two menu pages: side by side on desktop, stacked on mobile */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+            {/* Page 1: main pizza menu */}
+            <div className="relative rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.3)] border-4 border-[#F5F4E0]/10 hover:border-[#E25439]/50 transition-colors duration-500">
+              <Image
+                src="/menu/knead-menu-pizza.webp"
+                alt="Knead Pizzeria menu: starters, artisan sourdough pizzas and extras"
+                width={1414}
+                height={2000}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
 
-            {/* Interactive Overlay */}
+            {/* Page 2: San-Dough's (highlighted, weekend lunch) */}
+            <div id="san-dough" className="relative scroll-mt-28">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap rounded-full bg-[#E25439] px-6 py-2 text-[#F5F4E0] font-black uppercase tracking-widest text-xs md:text-sm shadow-xl">
+                New &middot; San-Dough&rsquo;s &middot; Sat &amp; Sun 12&ndash;3pm
+              </div>
+              <div className="relative rounded-[2rem] overflow-hidden shadow-[0_0_60px_rgba(226,84,57,0.35)] border-4 border-[#E25439] transition-colors duration-500">
+                <Image
+                  src="/menu/knead-menu-san-dough.webp"
+                  alt="Knead San-Dough's menu: sourdough sandos, available Saturday and Sunday 12pm to 3pm"
+                  width={1414}
+                  height={2000}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Bottom CTA */}

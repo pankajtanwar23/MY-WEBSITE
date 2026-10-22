@@ -17,10 +17,12 @@ import UsersTestimonials from '@/components/UsersTestimonials';
 import OpenNowMenu from '@/components/OpenNowMenu';
 import LiveFeed from '@/components/LiveFeed';
 import PizzaShowcase from '@/components/PizzaShowcase';
+import LunchPopup from '@/components/LunchPopup';
 
 export default function HomePage() {
     return (
         <div className="min-h-screen">
+            <LunchPopup />
             <Hero />
 
             {/* <PizzaShowcase /> */}
